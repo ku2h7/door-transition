@@ -1,0 +1,71 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flipbox {
+  position: relative;
+  height: 500px;
+  width: 240px;
+  border: 18px solid #90335d;
+  border-radius: 10px;
+}
+
+.flipbox-bg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #404552;
+  z-index: -2;
+}
+
+.flipbox-active {
+  height: 500px;
+  width: 240px;
+  background-color: #ffc0d3;
+  transform-origin: left;
+  transition: transform .75s;
+}
+
+.knob {
+  position: absolute;
+  background-color: #90335d;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  top: 45%;
+  right: 5%;
+  transform: translateY(-50%);
+}
+
+img {
+  width: 40%;
+  position: absolute;
+  top: 50px;
+  left: 5%;
+  z-index: -1;
+  transition: left 1.5s;
+  transition-delay: 1s;
+}
+
+.flipbox:hover .flipbox-active {
+  transform: perspective(1200px) rotateY(50deg);
+}
+
+.flipbox:hover img {
+  left: 55%;
+}
+
